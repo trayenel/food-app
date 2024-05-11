@@ -1,0 +1,12 @@
+.list {
+  margin: 0 auto;
+  background-color: red;
+  max-width: 110vh;
+  border-radius: 15px;
+}
+
+.list ul {
+  margin-left: 50%;
+  transform: translate(-50px);
+  list-style: none;
+}
