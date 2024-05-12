@@ -1,8 +1,11 @@
 .list {
   margin: 1.5rem auto 0;
-  background-color: red;
+  background-color: #ffa94d;
   max-width: 110vh;
   border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .list ul {

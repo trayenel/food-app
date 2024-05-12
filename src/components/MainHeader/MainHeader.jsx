@@ -6,7 +6,7 @@ function MainHeader() {
     <>
       <div className={styles["main-header"]}>
         <h1>App mancare</h1>
-        <Button />
+        <Button name={"Add to cart"} />
       </div>
     </>
   );
