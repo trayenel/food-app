@@ -7,9 +7,8 @@ function Meals(props) {
   return (
     <ul className={styles.list}>
       {props.foodData.map((food, idx) => (
-        <Card id={idx}>
+        <Card key={idx}>
           <MealItem
-            id={idx}
             foodName={food.name}
             foodDesc={food.desc}
             foodPrice={+food.price}

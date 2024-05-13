@@ -1,5 +1,5 @@
 import styles from "./MealItem.module.css";
-import Button from "../../UI/Button/Button.jsx";
+import MealForm from "../MealForm/MealForm.jsx";
 
 function MealItem(props) {
   const price = props.foodPrice.toFixed(2);
@@ -10,9 +10,7 @@ function MealItem(props) {
         <p>{props.foodName}</p> <p>{props.foodDesc}</p>
         <p>{price + " $"}</p>
       </div>
-      <div className={styles.actions}>
-        <Button name={"+ Add"} />
-      </div>
+      <MealForm />
     </li>
   );
 }
