@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "./App.css";
-import MainHeader from "./components/MainHeader/MainHeader.jsx";
-import List from "./components/List/List.jsx";
-import Banner from "./components/Banner/Banner.jsx";
+import MainHeader from "./components/Layout/MainHeader/MainHeader.jsx";
+import Meals from "./components/Meals/Meals.jsx";
+import Banner from "./components/Layout/Banner/Banner.jsx";
 
 function App() {
   const foodMenu = [
@@ -47,37 +47,22 @@ function App() {
       price: 11.5,
     },
     {
-      name: "Tandoori Chicken",
-      desc: "Spiced chicken marinated in yogurt and Indian spices, roasted in a tandoor oven, served with naan bread and cucumber raita.",
-      price: 12.25,
-    },
-    {
       name: "Fish and Chips",
       desc: "Crispy battered fish fillets served with golden fries, tartar sauce, and malt vinegar.",
       price: 10.99,
     },
   ];
 
+  const messages = [
+    "Bun venit în locul unde pasiunea culinară întâlnește tradiția!",
+    "Cu o istorie bogată și o atenție meticuloasă la detalii, fiecare preparat este o călătorie în bucuria gustului autentic. Făcută cu dragoste de mamă, fiecare rețetă păstrează aromele și secretele tradiționale transmise din generație în generație.",
+    "Noi credem în prospețime și calitate, așa că selectăm cu grijă cele mai proaspete ingrediente locale pentru a vă oferi experiența culinară perfectă. În fiecare farfurie veți simți aroma îmbietoare a tradiției și gustul inconfundabil al mâncării pregătite cu devotament și pricepere.",
+  ];
   return (
     <>
       <MainHeader />
-      <Banner>
-        <h1>Bun venit în locul unde pasiunea culinară întâlnește tradiția!</h1>
-        <p>
-          Cu o istorie bogată și o atenție meticuloasă la detalii, fiecare
-          preparat este o călătorie în bucuria gustului autentic. Făcută cu
-          dragoste de mamă, fiecare rețetă păstrează aromele și secretele
-          tradiționale transmise din generație în generație.
-        </p>
-        <p>
-          Noi credem în prospețime și calitate, așa că selectăm cu grijă cele
-          mai proaspete ingrediente locale pentru a vă oferi experiența culinară
-          perfectă. În fiecare farfurie veți simți aroma îmbietoare a tradiției
-          și gustul inconfundabil al mâncării pregătite cu devotament și
-          pricepere.
-        </p>
-      </Banner>
-      <List foodData={foodMenu} />
+      <Banner restaurantStrings={messages} />
+      <Meals foodData={foodMenu} />
     </>
   );
 }

@@ -1,0 +1,24 @@
+.main-header {
+  background-color: #ffa94d;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1;
+  position: fixed;
+}
+
+.image img {
+  width: 110%;
+  height: 100%;
+  object-fit: cover;
+  transform: rotateZ(-5deg)  ;
+}
+
+.image {
+  height: 25rem;
+
+  width: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
