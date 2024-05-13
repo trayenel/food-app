@@ -6,10 +6,10 @@ function MealItem(props) {
 
   return (
     <li className={styles.meal}>
-      <div className={styles["product-info"]}>
+      <span className={styles["product-info"]}>
         <p>{props.foodName}</p> <p>{props.foodDesc}</p>
         <p>{price + " $"}</p>
-      </div>
+      </span>
       <MealForm />
     </li>
   );

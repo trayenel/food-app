@@ -37,11 +37,6 @@ function App() {
       price: 14.99,
     },
     {
-      name: "Shrimp Alfredo",
-      desc: "Fettuccine pasta tossed in a creamy Alfredo sauce with succulent shrimp, topped with grated Parmesan cheese.",
-      price: 13.75,
-    },
-    {
       name: "Mushroom Swiss Burger",
       desc: "Grilled beef patty topped with sautéed mushrooms and melted Swiss cheese, served on a brioche bun.",
       price: 11.5,
@@ -61,7 +56,22 @@ function App() {
   return (
     <>
       <MainHeader />
-      <Banner restaurantStrings={messages} />
+      <Banner restaurantStrings={messages}>
+        <h1>Bun venit în locul unde pasiunea culinară întâlnește tradiția!</h1>
+        <p>
+          Cu o istorie bogată și o atenție meticuloasă la detalii, fiecare
+          preparat este o călătorie în bucuria gustului autentic. Făcută cu
+          dragoste de mamă, fiecare rețetă păstrează aromele și secretele
+          tradiționale transmise din generație în generație.
+        </p>
+        <p>
+          Noi credem în prospețime și calitate, așa că selectăm cu grijă cele
+          mai proaspete ingrediente locale pentru a vă oferi experiența culinară
+          perfectă. În fiecare farfurie veți simți aroma îmbietoare a tradiției
+          și gustul inconfundabil al mâncării pregătite cu devotament și
+          pricepere.
+        </p>
+      </Banner>
       <Meals foodData={foodMenu} />
     </>
   );
