@@ -3,9 +3,10 @@ import { createContext, useState } from "react";
 export const CartContext = createContext([]);
 
 export const CartProvider = ({ children }) => {
-  const [cartMeals, setCartMeals] = useState([]);
+  const [cartMeals, setCartMeals] = useState({});
 
-  const updateCart = (item) => setCartMeals((oldItems) => [...oldItems, item]);
+  const updateCart = (item) =>
+    setCartMeals((oldItems) => ({ ...oldItems, ...item }));
 
   return (
     <CartContext.Provider value={{ cartMeals, updateCart }}>

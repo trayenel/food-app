@@ -8,9 +8,9 @@ function Cart(props) {
   return (
     <>
       <ul>
-        {cartMeals.map((item, idx) => (
+        {Object.keys(cartMeals).map((item, idx) => (
           <li key={idx}>
-            {item.name} {item.qty}
+            {item} {cartMeals[item]}
           </li>
         ))}
       </ul>

@@ -25,7 +25,7 @@ function MealForm(props) {
       <button
         onClick={(event) => {
           event.preventDefault();
-          updateCart({ name: "banana", qty: amountRef });
+          updateCart({ paramar: 1 });
           console.log(cart);
         }}
       >
