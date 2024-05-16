@@ -1,7 +1,12 @@
 import styles from "./MealForm.module.css";
 import Input from "../../UI/Input/Input.jsx";
+import { useContext, useRef } from "react";
+import { CartContext } from "../../../Context/Context.jsx";
 
 function MealForm(props) {
+  const { cartItems, updateCart } = useContext(CartContext);
+
+  const cart = useContext(CartContext);
   return (
     <form className={styles["meal-form"]}>
       <span>
@@ -17,7 +22,15 @@ function MealForm(props) {
           }}
         />
       </span>
-      <button>+ Add</button>
+      <button
+        onClick={(event) => {
+          event.preventDefault();
+          updateCart({ name: "banana", qty: amountRef });
+          console.log(cart);
+        }}
+      >
+        + Add
+      </button>
     </form>
   );
 }

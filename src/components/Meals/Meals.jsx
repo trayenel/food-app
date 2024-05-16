@@ -1,12 +1,16 @@
 import styles from "./Meals.module.css";
 import MealItem from "./MealItem/MealItem.jsx";
 import Card from "../UI/Card/Card.jsx";
+import { useContext } from "react";
+import { MealsContext } from "../../Context/Context.jsx";
 
 function Meals(props) {
-  if (props.foodData.length < 1) return;
+  const foodData = useContext(MealsContext);
+
+  if (foodData.meals.length < 1) return;
   return (
     <ul className={styles.list}>
-      {props.foodData.map((food, idx) => (
+      {foodData.meals.map((food, idx) => (
         <Card key={idx}>
           <MealItem
             foodName={food.name}

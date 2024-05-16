@@ -1,5 +1,6 @@
 import styles from "./MealItem.module.css";
 import MealForm from "../MealForm/MealForm.jsx";
+import { CartProvider } from "../../../Context/Context.jsx";
 
 function MealItem(props) {
   const price = props.foodPrice.toFixed(2);

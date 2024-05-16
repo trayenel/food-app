@@ -2,7 +2,7 @@ import styles from "./MainHeader.module.css";
 import mealsImage from "../../../assets/meals.jpg";
 import MainHeaderButton from "./MainHeaderButton.jsx";
 
-function MainHeader() {
+function MainHeader(props) {
   return (
     <>
       <header className={styles["main-header"]}>
