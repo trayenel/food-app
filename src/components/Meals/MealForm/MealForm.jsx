@@ -4,9 +4,8 @@ import { useContext, useRef } from "react";
 import { CartContext } from "../../../Context/Context.jsx";
 
 function MealForm(props) {
-  const { cartMeals, updateCart } = useContext(CartContext);
+  const { mealsDispatcher } = useContext(CartContext);
   const qtyRef = useRef(null);
-  const mealName = props.itemName;
 
   return (
     <form className={styles["meal-form"]}>
@@ -27,13 +26,16 @@ function MealForm(props) {
       <button
         onClick={(event) => {
           event.preventDefault();
-          updateCart([
-            {
-              name: props.itemName,
-              totalValue: props.itemPrice * qtyRef.current.value,
-              qty: qtyRef.current.value,
+          mealsDispatcher({
+            type: "add_meal",
+            meal: {
+              [props.itemId]: {
+                name: props.itemName,
+                totalValue: props.itemPrice * qtyRef.current.value,
+                qty: +qtyRef.current.value,
+              },
             },
-          ]);
+          });
         }}
       >
         + Add

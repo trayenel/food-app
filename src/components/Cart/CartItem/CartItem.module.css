@@ -1,0 +1,36 @@
+.cart-item {
+  border-bottom: 2px solid #ffa94d;
+  max-height: 10rem;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.info {
+  display: flex;
+  gap: 1rem;
+}
+
+.button {
+  padding: 0.25rem 0.5rem;
+  color: black;
+  background-color: white;
+  border: 0.1rem solid black;
+  border-radius: 5px;
+  margin-right: 0.5em;
+}
+
+.button--alt {
+  padding: 0.25rem 0.5rem;
+  background-color: white;
+  border: 0.1rem solid black;
+  color: black;
+  border-radius: 5px;
+}
+
+.button--delete {
+  border: none;
+  background-color: white;
+  color: black;
+}
+

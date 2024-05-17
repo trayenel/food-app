@@ -13,6 +13,7 @@ function Meals(props) {
       {foodData.meals.map((food, idx) => (
         <Card key={idx}>
           <MealItem
+            itemId={food.id}
             foodName={food.name}
             foodDesc={food.desc}
             foodPrice={+food.price}

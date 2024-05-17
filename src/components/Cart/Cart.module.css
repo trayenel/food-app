@@ -1,10 +1,12 @@
-.cart {
+.cart-items {
   top: 50px;
   background-color: white;
   padding: 1rem;
   list-style: none;
   display: flex;
   flex-direction: column;
+  max-height: 15rem;
+  overflow:  clip scroll;
 }
 
 .actions {
@@ -25,7 +27,4 @@
   padding: 0.8rem 2rem;
 }
 
-h2 {
-  border-top: 1px black solid;
-}
-
+h2 {margin: 0}
