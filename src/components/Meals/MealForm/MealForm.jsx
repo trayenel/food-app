@@ -4,9 +4,10 @@ import { useContext, useRef } from "react";
 import { CartContext } from "../../../Context/Context.jsx";
 
 function MealForm(props) {
-  const { cartItems, updateCart } = useContext(CartContext);
+  const { updateCart } = useContext(CartContext);
+  const qtyRef = useRef(null);
+  const mealName = props.itemName;
 
-  const cart = useContext(CartContext);
   return (
     <form className={styles["meal-form"]}>
       <span>
@@ -20,13 +21,13 @@ function MealForm(props) {
             step: "1",
             defaultValue: "1",
           }}
+          ref={qtyRef}
         />
       </span>
       <button
         onClick={(event) => {
           event.preventDefault();
-          updateCart({ paramar: 1 });
-          console.log(cart);
+          updateCart({ [mealName]: qtyRef.current.value });
         }}
       >
         + Add

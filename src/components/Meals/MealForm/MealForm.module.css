@@ -7,8 +7,9 @@
 .meal-form input {
   border: 1px solid #ffa94d;
   background-color: #242424;
-  padding: 0.2rem;
   margin-left: 5px;
+  padding: 0.2rem;
+  width: 2rem;
 }
 
 .meal-form input:focus {

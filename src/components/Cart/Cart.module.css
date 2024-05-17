@@ -1,14 +1,9 @@
-.list {
-  margin: 1.5rem auto 0;
-  background-color: #ffa94d;
-  max-width: 110vh;
-  border-radius: 15px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.list ul {
-  margin: 0;
+.cart {
+  position: absolute;
+  z-index: 2;
+  top: 50px;
+  background-color: white;
+  padding: 1rem;
+  color: black;
   list-style: none;
 }

@@ -1,9 +1,17 @@
 .meal {
   list-style: none;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
   border-bottom: 1px black solid;
+  grid-template-columns: repeat(6, 1fr);
+  align-items: center;
+  justify-items: start;
+  gap: 20px;
+  text-align: justify;
+}
+
+.product-info {
+  grid-column-start: 1;
+  grid-column-end: 6;
 }
 
 .meal p {

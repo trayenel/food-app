@@ -8,24 +8,24 @@ import { CartProvider } from "./Context/Context.jsx";
 function App() {
   return (
     <>
-      <MainHeader />
-      <Banner>
-        <h1>Bun venit în locul unde pasiunea culinară întâlnește tradiția!</h1>
-        <p>
-          Cu o istorie bogată și o atenție meticuloasă la detalii, fiecare
-          preparat este o călătorie în bucuria gustului autentic. Făcută cu
-          dragoste de mamă, fiecare rețetă păstrează aromele și secretele
-          tradiționale transmise din generație în generație.
-        </p>
-        <p>
-          Noi credem în prospețime și calitate, așa că selectăm cu grijă cele
-          mai proaspete ingrediente locale pentru a vă oferi experiența culinară
-          perfectă. În fiecare farfurie veți simți aroma îmbietoare a tradiției
-          și gustul inconfundabil al mâncării pregătite cu devotament și
-          pricepere.
-        </p>
-      </Banner>
       <CartProvider>
+        <MainHeader />
+        <Banner>
+          <h1>Welcome to the place where culinary passion meets tradition!</h1>
+          <p>
+            With a rich history and meticulous attention to detail, each dish is
+            a journey into the joy of authentic taste. Made with motherly love,
+            each recipe preserves the flavors and secrets passed down from
+            generation to generation.
+          </p>
+          <p>
+            We believe in freshness and quality, so we carefully select the
+            freshest local ingredients to offer you the perfect culinary
+            experience. In every dish, you will feel the enticing aroma of
+            tradition and the unmistakable taste of food prepared with devotion
+            and skill.
+          </p>
+        </Banner>
         <Meals />
         <Cart />
       </CartProvider>
