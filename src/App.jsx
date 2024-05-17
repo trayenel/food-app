@@ -4,12 +4,18 @@ import Meals from "./components/Meals/Meals.jsx";
 import Banner from "./components/Layout/Banner/Banner.jsx";
 import Cart from "./components/Cart/Cart.jsx";
 import { CartProvider } from "./Context/Context.jsx";
+import { useState } from "react";
 
 function App() {
+  const [cartShown, setCartIsShown] = useState(false);
+
+  const showCart = () => setCartIsShown((oldVal) => !oldVal);
+
   return (
-    <>
-      <CartProvider>
-        <MainHeader />
+    <CartProvider>
+      {cartShown && <Cart cartAction={showCart} />}
+      <>
+        <MainHeader cartAction={showCart} />
         <Banner>
           <h1>Welcome to the place where culinary passion meets tradition!</h1>
           <p>
@@ -27,9 +33,8 @@ function App() {
           </p>
         </Banner>
         <Meals />
-        <Cart />
-      </CartProvider>
-    </>
+      </>
+    </CartProvider>
   );
 }
 

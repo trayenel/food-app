@@ -7,7 +7,7 @@ function MainHeader(props) {
     <>
       <header className={styles["main-header"]}>
         <h1>App mancare</h1>
-        <MainHeaderButton />
+        <MainHeaderButton cartAction={props.cartAction} />
       </header>
       <div className={styles.image}>
         <img src={mealsImage} alt={"A table full of food."} />

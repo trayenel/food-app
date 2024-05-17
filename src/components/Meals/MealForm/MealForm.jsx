@@ -4,7 +4,7 @@ import { useContext, useRef } from "react";
 import { CartContext } from "../../../Context/Context.jsx";
 
 function MealForm(props) {
-  const { updateCart } = useContext(CartContext);
+  const { cartMeals, updateCart } = useContext(CartContext);
   const qtyRef = useRef(null);
   const mealName = props.itemName;
 
@@ -27,7 +27,13 @@ function MealForm(props) {
       <button
         onClick={(event) => {
           event.preventDefault();
-          updateCart({ [mealName]: qtyRef.current.value });
+          updateCart([
+            {
+              name: props.itemName,
+              totalValue: props.itemPrice * qtyRef.current.value,
+              qty: qtyRef.current.value,
+            },
+          ]);
         }}
       >
         + Add

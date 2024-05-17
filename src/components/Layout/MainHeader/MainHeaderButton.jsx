@@ -6,7 +6,7 @@ import { CartContext } from "../../../Context/Context.jsx";
 function MainHeaderButton(props) {
   const { cartMeals } = useContext(CartContext);
   return (
-    <button className={styles.btn}>
+    <button className={styles.btn} onClick={props.cartAction}>
       <CartIcon />
       <span>Your cart</span>
       <span>
