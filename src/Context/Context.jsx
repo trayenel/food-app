@@ -13,10 +13,10 @@ export const CartProvider = ({ children }) => {
         return { ...state };
       }
       case "increment_qty": {
-        console.log(state);
         return { ...state };
       }
       case "decrement_qty": {
+        console.log(state);
         return { ...state };
       }
     }

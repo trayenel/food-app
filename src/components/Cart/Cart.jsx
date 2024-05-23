@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CartContext } from "../../Context/Context.jsx";
 import styles from "./Cart.module.css";
 import Modal from "../UI/Modal/Modal.jsx";
@@ -7,25 +7,41 @@ import CartItem from "./CartItem/CartItem.jsx";
 function Cart(props) {
   const { cartMeals } = useContext(CartContext);
 
-  const checkoutPrice = Object.keys(cartMeals).reduce(
-    (acc, cur) => acc + cartMeals[cur].totalValue,
-    0,
+  const [checkoutPrice, setCheckoutPrice] = useState(
+    Object.keys(cartMeals)?.reduce(
+      (previousValue, currentValue) =>
+        previousValue +
+        cartMeals[currentValue].totalValue * cartMeals[currentValue].qty,
+      0,
+    ),
   );
+
+  const priceUpdateHandler = (price, sign) => {
+    setCheckoutPrice((oldPrice) => oldPrice - price);
+  };
+
+  const priceSubstractHandler = (price, sign) => {
+    setCheckoutPrice((oldPrice) => oldPrice - price);
+  };
+
+  const priceAddHandler = (price, sign) => {
+    setCheckoutPrice((oldPrice) => oldPrice + price);
+  };
 
   return (
     <Modal onClose={props.onClose}>
       <ul className={styles["cart-items"]}>
-        {Object.keys(cartMeals)?.map((item, idx) => {
-          return (
-            <CartItem
-              name={cartMeals[item].name}
-              qty={+cartMeals[item].qty}
-              value={cartMeals[item].totalValue}
-              key={idx}
-              itemId={item}
-            ></CartItem>
-          );
-        })}
+        {Object.keys(cartMeals)?.map((item, idx) => (
+          <CartItem
+            name={cartMeals[item].name}
+            qty={+cartMeals[item].qty}
+            value={cartMeals[item].totalValue}
+            key={idx}
+            itemId={item}
+            decreasePrice={priceSubstractHandler}
+            increasePrice={priceAddHandler}
+          ></CartItem>
+        ))}
       </ul>
       <h2>Total Amount: {checkoutPrice.toFixed(2)}$</h2>
       <div className={styles.actions}>

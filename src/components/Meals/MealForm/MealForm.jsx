@@ -31,7 +31,7 @@ function MealForm(props) {
             meal: {
               [props.itemId]: {
                 name: props.itemName,
-                totalValue: props.itemPrice * qtyRef.current.value,
+                totalValue: props.itemPrice,
                 qty: +qtyRef.current.value,
               },
             },
