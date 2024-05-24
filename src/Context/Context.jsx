@@ -16,7 +16,6 @@ export const CartProvider = ({ children }) => {
         return { ...state };
       }
       case "decrement_qty": {
-        console.log(state);
         return { ...state };
       }
     }

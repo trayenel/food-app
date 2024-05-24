@@ -16,15 +16,11 @@ function Cart(props) {
     ),
   );
 
-  const priceUpdateHandler = (price, sign) => {
-    setCheckoutPrice((oldPrice) => oldPrice - price);
-  };
-
-  const priceSubstractHandler = (price, sign) => {
-    setCheckoutPrice((oldPrice) => oldPrice - price);
-  };
-
-  const priceAddHandler = (price, sign) => {
+  const priceUpdateHandler = (price, op = "increase") => {
+    if (op === "decrease") {
+      setCheckoutPrice((oldPrice) => oldPrice - price);
+      return;
+    }
     setCheckoutPrice((oldPrice) => oldPrice + price);
   };
 
@@ -38,8 +34,7 @@ function Cart(props) {
             value={cartMeals[item].totalValue}
             key={idx}
             itemId={item}
-            decreasePrice={priceSubstractHandler}
-            increasePrice={priceAddHandler}
+            priceUpdate={priceUpdateHandler}
           ></CartItem>
         ))}
       </ul>

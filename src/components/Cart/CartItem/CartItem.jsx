@@ -18,7 +18,7 @@ function CartItem(props) {
           onClick={(event) => {
             event.preventDefault();
             cartMeals[props.itemId].qty++;
-            props.increasePrice(props.value);
+            props.priceUpdate(props.value);
             mealsDispatcher({
               type: "increment_qty",
             });
@@ -32,7 +32,7 @@ function CartItem(props) {
             event.preventDefault();
             if (cartMeals[props.itemId].qty < 2) return;
             cartMeals[props.itemId].qty--;
-            props.decreasePrice(props.value);
+            props.priceUpdate(props.value, "decrease");
             mealsDispatcher({
               type: "decrement_qty",
             });
@@ -44,7 +44,10 @@ function CartItem(props) {
           className={styles["button--delete"]}
           onClick={(event) => {
             event.preventDefault();
-            props.decreasePrice(props.value * cartMeals[props.itemId].qty);
+            props.priceUpdate(
+              props.value * cartMeals[props.itemId].qty,
+              "decrease",
+            );
             mealsDispatcher({
               type: "remove_meal",
               mealId: props.itemId,
